@@ -1,6 +1,8 @@
 @media (max-width: 899px) {
   .catalog-shell { padding:10px 10px 8px; grid-template-rows:auto minmax(0,1fr) auto; }
   .viewer-heading { margin-bottom:7px; }.viewer-heading p { display:none; }
+  .brand-logo { --brand-logo-width: min(var(--brand-logo-mobile-width, 18cqh), 42vw); }
+  .brand-logo--viewer { --brand-logo-mobile-width: 72px; }.brand-logo--cover { --brand-logo-mobile-width: 25cqh; }.brand-logo--large { --brand-logo-mobile-width: 22cqh; }.brand-logo--medium { --brand-logo-mobile-width: 17cqh; }.brand-logo--small { --brand-logo-mobile-width: 14cqh; }.brand-logo--signature { --brand-logo-mobile-width: 12cqh; }
   .book-stage { width:min(calc(100vw - 20px), 520px); height:min(calc(140.4vw - 28px), calc(100svh - 116px), 730px); min-height:0; }
   .flip-book { filter:drop-shadow(0 15px 35px rgba(0,0,0,.25)); }
   .swipe-hint { display:flex; }

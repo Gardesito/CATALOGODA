@@ -9,6 +9,7 @@ import IntroductionPage from '../pages/IntroductionPage'
 import CategoryCoverPage from '../pages/CategoryCoverPage'
 import ContactPage from '../pages/ContactPage'
 import ProductPage from '../products/ProductPage'
+import BrandLogo from '../ui/BrandLogo'
 
 export default function CatalogViewer({ categories, products }) {
   const bookRef = useRef(null)
@@ -52,7 +53,7 @@ export default function CatalogViewer({ categories, products }) {
   }
 
   return <main className="catalog-shell" ref={viewerRef}>
-    <div className="viewer-heading"><span>DON ATILIO</span><p>Catálogo Mayorista</p></div>
+    <div className="viewer-heading"><BrandLogo size="viewer" /><p>Catálogo Mayorista</p></div>
     <section className="book-stage" aria-label="Catálogo digital">
       <HTMLFlipBook key={mobile ? 'mobile' : 'desktop'} ref={bookRef} width={520} height={730} size="stretch" minWidth={280} maxWidth={520} minHeight={393} maxHeight={730} showCover={false} mobileScrollSupport swipeDistance={20} useMouseEvents drawShadow={!mobile} flippingTime={650} maxShadowOpacity={0.25} showPageCorners={!mobile} usePortrait={mobile} startPage={current} onFlip={(event) => setCurrent(event.data)} className="flip-book">
         {pages.map((page) => <CatalogPage key={page.id} number={page.pageNumber} showNumber={page.type !== 'cover'} className={`page-${page.type}`}>{renderPage(page)}</CatalogPage>)}
